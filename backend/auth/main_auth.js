@@ -1,16 +1,15 @@
-const jwt = require("jsonwebtoken")
-const { request } = require("../app")
-const auth = (req,res,next) =>{
+const jwt = require('jsonwebtoken');
+
+const auth = (req, res, next) => {
     try {
-        const token = req.headers.autorization.split("")[1]
-        const decoded = jwt.verify(token,"__secret__")
+        const token = req.headers.authorization.split(" ")[1]
+        const decoded = jwt.verify(token, '__secret__')
         req.usuario = decoded
         next()
-        
     } catch (error) {
-        res.status(401)   
-        res.json({code: 4, msj: "No tiene permisos para acceder"})
+        res.status(401)
+        res.json({ code: 401, msg: "No Autorizado" })
     }
 }
-module.exports = auth
 
+module.exports = auth;
