@@ -1,12 +1,13 @@
 import React from "react";
 import axios from "axios";
-import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { Container, Form, Row, Col } from "react-bootstrap";
 import { APIHOST as host } from '../../app.json';
 import './Login.css'
 import { isNull } from 'util';
 import Cookies from 'universal-cookie';
 import { calculaExtraccionSesion } from "../helper/helpers";
 import Loading from "../Loading/Loading";
+import Button from '@mui/material/Button';
 
 const cookies = new Cookies();
 
@@ -89,7 +90,12 @@ export default class Login extends React.Component {
                                         />
                                     </Form.Group>
                                     <Button
-                                        variant="success"
+                                        // variant="success"
+                                        type="submit"
+                                        fullWidth
+                                        variant="contained"
+                                        sx={{ mt: 3, mb: 2 }}
+                                        
                                         onClick={ () => { 
                                             this.iniciarSesion();
                                         } }

@@ -3,7 +3,7 @@ import { Container, DropdownButton, Nav, Navbar, Dropdown, Row } from "react-boo
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import './Navbar.css';
-// import Logo from '../Img/Logo.png';
+import Logo from '../Img/Logo.png';
 
 export default class NavBar extends React.Component {
     constructor(props) {
@@ -14,8 +14,8 @@ export default class NavBar extends React.Component {
         return (
             <Navbar fixed="top" id="navbar" bg="primary" variant="dark">
                 <Container>
-                    <img className="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/1200px-React.svg.png" alt="Logo"/>
-                    <Navbar.Brand href="#home">Grupo 2 Mision Tic <span id="usuario-sub-brand"></span></Navbar.Brand>
+                    <img className="img-logo" src={Logo} alt="Logo"/>
+                    <Navbar.Brand href="#home">IT SmartWeb <span id="usuario-sub-brand"></span></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">

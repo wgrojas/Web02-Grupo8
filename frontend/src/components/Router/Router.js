@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from "../Login/Login";
+import LoginM from "../Login/LoginM";
 import error from "../Img/404.jpg";
 
 export default function AppRouter() {
@@ -8,6 +9,7 @@ export default function AppRouter() {
     <Router>
       <Switch>
         <Route exact path={["/", "/login"]} component={Login} />
+        <Route exact path={["/", "/loginM"]} component={LoginM} />
         {/* <Route exact path={["/home"]} component={Home} /> */}
 
 
